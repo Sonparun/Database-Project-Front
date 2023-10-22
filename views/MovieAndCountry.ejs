@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>HabitatOfAnimal</title>
+    <title>Movie And Country</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -21,6 +21,8 @@
         h1 {
             text-align: center;
             color: #2196f3;
+            font-size: 36px;
+            margin-top: 20px;
         }
 
         table {
@@ -48,7 +50,7 @@
             display: block;
             margin: 0 auto;
             border-radius: 5px;
-            cursor: pointer; 
+            cursor: pointer;
         }
 
         .actions {
@@ -99,21 +101,25 @@
     </style>
 </head>
 <body>
-    <h1>View HabitatOfAnimal</h1>
-    <table class="HabitatOfAnimal-table">
-    <tr>
-        <th>AnimalID</th>
-        <th>HabitatID</th>
-    </tr>
-    <tr>
-        <td><%= HabitatOfAnimal.AnimalID %></td>
-        <td><%= HabitatOfAnimal.HabitatID %></td>
-    </tr>
-</table>
-<div class="link-center">
-    <a href="/updateHabitatOfAnimal/<%= HabitatOfAnimal.AnimalID %>">Edit</a>
-    <a href="/updateHabitatOfAnimal/<%= HabitatOfAnimal.AnimalID %>">Delete</a>
-    <a href="/">Back to List</a>
-</div>
+    <h1>View MovieAndCountry</h1>
+    <table class="MovieAndCountry-table">
+        <tr>
+            <th>MovieID</th>
+            <th>CountryID</th>
+        </tr>
+        <tr>
+            <td><%= MovieAndCountry.MovieID %></td>
+            <td><%= MovieAndCountry.CountryID %></td>
+        </tr>
+    </table>
+    <div class="link-center">
+        <a href="/updateMovieAndCountry/<%= MovieAndCountry.MovieID %>">Edit</a>
+        <a href="/updateMovieAndCountry/<%= MovieAndCountry.MovieID %>">Delete</a>
+        <a href="/">Back to List</a>
+    </div>
+    <!-- Lightbox for displaying larger image -->
+    <div class="lightbox" id="lightbox">
+        <img src="" alt="Large Image" id="lightbox-image">
+    </div>
 </body>
 </html>

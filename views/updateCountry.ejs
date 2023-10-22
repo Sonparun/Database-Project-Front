@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Update Country</title>
+    <style>
+        body {
+            font-family: 'Agency FB', sans-serif;
+            background: url('https://cdn.wallpapersafari.com/9/99/g7mtvV.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: #fff;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        h1 {
+            color: #f0f2f3;
+            font-size: 32px;
+            font-family: 'Agency FB', sans-serif;
+        }
+
+        form {
+            width: 70%;
+            margin: 20px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+        }
+
+        label {
+            display: block;
+            margin: 10px 0;
+            color: #eeeeee;
+            font-family: 'Agency FB', sans-serif;
+        }
+
+        input {
+            width: 100%;
+            padding: 15px;
+            margin: 5px 0;
+            box-sizing: border-box;
+            border: 2px solid #2196f3;
+            border-radius: 10px;
+            background-color: #292929;
+            color: #fff;
+            font-size: 16px;
+            font-family: 'Agency FB', sans-serif;
+        }
+
+        input[type="submit"] {
+            background-color: #2196f3;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #1769aa;
+        }
+
+        a {
+            display: block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 24px;
+            font-family: 'Agency FB', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Update Country</h1>
+    <form method="post" action="/updateCountry/<%= Country.ID %>">
+        <label for="Name">Name</label>
+        <input type="text" id="Name" name="Name" value="<%= Country.Name %>">
+        <br>
+        <label for="Data">Data</label>
+        <input type="text" id="Data" name="Data" value="<%= Country.Data %>">
+        <br>
+        <label for="Pic">Pic</label>
+        <input type="text" id="Pic" name="Pic" value="<%= Country.Pic %>">
+        <br>
+        <input type="submit" value="Update">
+    </form>
+    <a href="/Country/<%= Country.ID %>">View</a>
+    <a href="/DeleteCountry/<%= Country.ID %>">Delete</a>
+    <a href="/Countrys">Back to List</a>
+</body>
+</html>

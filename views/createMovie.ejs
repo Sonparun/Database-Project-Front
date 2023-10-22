@@ -1,11 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Update Habitat Of Animal</title>
+    <title>Create Movie</title>
     <style>
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Agency FB', sans-serif;
             background: #222; 
             color: #fff;
             text-align: center;
@@ -13,14 +12,15 @@
             background-size: cover;
             flex-direction: column;
             min-height: 100vh;
-            background-image: url('https://www.100hdwallpapers.com/wallpapers/2880x1800/penguins_of_madagascar_movie-widescreen_wallpapers.jpg');
-            background-size: cover; /* ให้รูปครอบคลุมพื้นที่ */
-            background-position: center; /* จัดตำแหน่งรูปตรงกลาง */
-            background-repeat: no-repeat; /* ไม่ให้รูปซ้ำ */
+            background-image: url('https://media.tenor.com/g8wqAI8jmbcAAAAd/skipper-kowalski.gif');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
 
         h1 {
             color: #f0f2f3;
+            font-family: 'Agency FB', sans-serif;
         }
 
         form {
@@ -36,6 +36,7 @@
             display: block;
             margin: 10px 0;
             color: #eeeeee;
+            font-family: 'Agency FB', sans-serif;
         }
 
         input {
@@ -48,6 +49,7 @@
             background-color: #292929;
             color: #fff;
             font-size: 16px;
+            font-family: 'Agency FB', sans-serif;
         }
 
         input[type="submit"] {
@@ -55,6 +57,7 @@
             color: white;
             cursor: pointer;
             transition: background-color 0.3s ease;
+            border: none;
         }
 
         input[type="submit"]:hover {
@@ -66,25 +69,25 @@
             margin-top: 20px;
             text-decoration: none;
             color: #ffffff;
-            font-size: 34px;
+            font-size: 24px;
+            font-family: 'Agency FB', sans-serif;
         }
     </style>
 </head>
 <body>
-    <h1>Update Habitat Of Animal</h1>
-    <form method="post" action="/updateHabitatOfAnimal/<%= HabitatOfAnimal.AnimalID %>">
-
-        <label for="AnimalID">AnimalID</label>
-        <input type="text" id="AnimalID" name="AnimalID" value="<%= HabitatOfAnimal.AnimalID %>">
+    <h1>Create Movie</h1>
+    <form method="post" action="/createMovie">
+        <label for="Name">Name</label>
+        <input type="text" id="Name" name="Name">
         <br>
-        <label for="HabitatID">HabitatID</label>
-        <input type="text" id="HabitatID" name="HabitatID" value="<%= HabitatOfAnimal.HabitatID %>">
+        <label for="Data">Data</label>
+        <input type="text" id="Data" name="Data">
         <br>
-
-        <input type="submit" value="Update">
+        <label for="Pic">Pic</label>
+        <input type="text" id="Pic" name="Pic">
+        <br>
+        <input type="submit" value="Create">
     </form>
-<a href="/HabitatOfAnimal/<%= HabitatOfAnimal.AnimalID %>">View</a>
-<a href="/DeleteHabitatOfAnimal/<%= HabitatOfAnimal.AnimalID %>">Delete</a>
-<a href="/">Back to List</a>
+    <a href="/Movies">Back to List</a>
 </body>
 </html>

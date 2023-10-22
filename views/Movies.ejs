@@ -1,26 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Habitats</title>
+    <title>Movies</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Agency FB', sans-serif;
             background-color: #1a1a1a;
             color: #fff;
             margin: 0;
             padding: 0;
             flex-direction: column;
             min-height: 100vh;
-            background-image: url('https://images.hdqwalls.com/download/jurassic-world-fallen-kingdom-key-art-e6-1920x1080.jpg');
-            background-size: cover; /* ให้รูปครอบคลุมพื้นที่ */
-            background-position: center; /* จัดตำแหน่งรูปตรงกลาง */
-            background-repeat: no-repeat; /* ไม่ให้รูปซ้ำ */
+            background-image: url('https://mono29.com/app/uploads/2016/07/madagascar-553c14ddd03eb.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
 
         h1 {
             text-align: center;
             color: #ffffff;
             -webkit-text-stroke: 2px black;
+            font-family: 'Agency FB', sans-serif;
         }
 
         table {
@@ -35,7 +36,7 @@
             border: 1px solid #444;
             padding: 12px;
             text-align: left;
-            white-space: pre-wrap; 
+            white-space: pre-wrap;
         }
 
         th {
@@ -45,7 +46,7 @@
         img {
             width: 300px;
             height: 180px;
-            object-fit: cover; 
+            object-fit: cover;
             border-radius: 5px;
         }
 
@@ -72,19 +73,20 @@
             margin-top: 10px;
             padding: 10px 15px;
             text-decoration: none;
-            background-color: #4caf50;
+            background-color: #af4c4c;
             color: #fff;
             border-radius: 5px;
             transition: background-color 0.3s ease;
+            font-family: 'Agency FB', sans-serif;
         }
 
         .create-link:hover {
-            background-color: #45a049;
+            background-color: #723131;
         }
     </style>
 </head>
 <body>
-    <h1>Habitats</h1>
+    <h1>Movies</h1>
     <table>
         <tr>
             <th>ID</th>
@@ -93,24 +95,22 @@
             <th>Pic</th>
             <th>Actions</th>
         </tr>
-        <% for (var i = 0; i < Habitats.length; i++) { %>
+        <% for (var i = 0; i < Movies.length; i++) { %>
             <tr>
-                <td><%= Habitats[i].ID %></td>
-                <td><%= Habitats[i].Name %></td>
-                <td><%= Habitats[i].Data %></td>
-                <td><img src="<%= Habitats[i].Pic %>" alt="Habitat Pic"></td>
+                <td><%= Movies[i].ID %></td>
+                <td><%= Movies[i].Name %></td>
+                <td><%= Movies[i].Data %></td>
+                <td><img src="<%= Movies[i].Pic %>" alt="Movie Pic"></td>
                 <td class="actions">
-                    <a href="/Habitat/<%= Habitats[i].ID %>">View</a>
-                    <a href="/updateHabitat/<%= Habitats[i].ID %>">Update</a>
-                    <a href="/deleteHabitat/<%= Habitats[i].ID %>">Delete</a>
+                    <a href="/Movie/<%= Movies[i].ID %>">View</a>
+                    <a href="/updateMovie/<%= Movies[i].ID %>">Update</a>
+                    <a href="/deleteMovie/<%= Movies[i].ID %>">Delete</a>
                 </td>
             </tr>
         <% } %>
     </table>
-    <a href="/createHabitat"class="create-link">Create New Habitat</a>
-    <br>
-    <a href="/" class="create-link">Add Habitat Of animal</a>
-    <br>
-    <a href="/Animals" class="create-link">Add Animal</a>
+    <a href="/createMovie" class="create-link">Create New Movie</a>
+    <a href="/" class="create-link">Add Country Of Movie</a>
+    <a href="/Countrys" class="create-link">Add Country</a>
 </body>
 </html>

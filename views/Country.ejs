@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Animal</title>
-    
+    <title>Country</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Agency FB', sans-serif;
             background-color: #1a1a1a;
             margin: 0;
             padding: 0;
@@ -13,21 +12,24 @@
             background-size: cover;
             flex-direction: column;
             min-height: 100vh;
-            background-image: url('https://lh3.googleusercontent.com/9n8bREG87PQKcPNpNfwcIaYvKCcJ2icsUWPPM3q8QGm_qf90OgQDL_ROLwIaC0TuOFUCPHlDJYV9yaLs95jcqn_QvJNW1Nqhopc9pdAKNit9-8-uVZDTLhzEBnUiAkp1Ch2XVeusCbxrS20DSHWs1sFWAWDvneVkU-wL3iPPgmXbLlYNwqgMN-FeOA');
-            background-size: cover; /* ให้รูปครอบคลุมพื้นที่ */
-            background-position: center; /* จัดตำแหน่งรูปตรงกลาง */
-            background-repeat: no-repeat; /* ไม่ให้รูปซ้ำ */
+            background-image: url('https://images.pexels.com/photos/2885320/pexels-photo-2885320.jpeg?cs=srgb&dl=pexels-roberto-nickson-2885320.jpg&fm=jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
 
         h1 {
             text-align: center;
-            color: #2196f3;
+            color: #ffffff;
+            -webkit-text-stroke: 2px black;
+            font-family: 'Agency FB', sans-serif;
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 20px;
+            font-family: 'Agency FB', sans-serif;
         }
 
         th, td {
@@ -36,6 +38,7 @@
             text-align: left;
             white-space: pre-wrap;
             font-size: 22px;
+            font-family: 'Agency FB', sans-serif;
         }
 
         th {
@@ -49,7 +52,7 @@
             display: block;
             margin: 0 auto;
             border-radius: 5px;
-            cursor: pointer; 
+            cursor: pointer;
         }
 
         .actions {
@@ -62,6 +65,7 @@
         .link-center {
             text-align: center;
             margin-top: 20px;
+            font-family: 'Agency FB', sans-serif;
         }
 
         .link-center a {
@@ -100,8 +104,8 @@
     </style>
 </head>
 <body>
-    <h1>View Animal</h1>
-    <table class="Animal-table">
+    <h1>View Country</h1>
+    <table class="Country-table">
         <tr>
             <th>ID</th>
             <th>Name</th>
@@ -109,22 +113,22 @@
             <th>Pic</th>
         </tr>
         <tr>
-            <td><%= Animal.ID %></td>
-            <td><%= Animal.Name %></td>
-            <td><%= Animal.Data %></td>
+            <td><%= Country.ID %></td>
+            <td><%= Country.Name %></td>
+            <td><%= Country.Data %></td>
             <td>
-                <img onclick="openLightbox(this)" src="<%= Animal.Pic %>" alt="Animal Pic">
+                <img onclick="openLightbox(this)" src="<%= Country.Pic %>" alt="Country Pic">
                 <!-- Lightbox -->
                 <div id="lightbox" class="lightbox" onclick="closeLightbox()">
-                    <img id="lightbox-img" src="<%= Animal.Pic %>" alt="Animal Pic">
+                    <img id="lightbox-img" src="<%= Country.Pic %>" alt="Country Pic">
                 </div>
-            </td>  
+            </td>
         </tr>
     </table>
     <div class="link-center">
-        <a href="/updateAnimal/<%= Animal.ID %>">Edit</a>
-        <a href="/updateAnimal/<%= Animal.ID %>">Delete</a>
-        <a href="/Animals">Back to List</a>
+        <a href="/updateCountry/<%= Country.ID %>">Edit</a>
+        <a href="/updateCountry/<%= Country.ID %>">Delete</a>
+        <a href="/Countrys">Back to List</a>
     </div>
 
     <script>
@@ -145,7 +149,7 @@
 
         function zoomImage(event) {
             var lightboxImg = document.getElementById('lightbox-img');
-            var delta = event.deltaY || event.detail || event.wheelDelta;
+            var delta = event.deltaY || -event.wheelDelta || event.detail;
 
             var scale = delta > 0 ? 1.1 : 0.9;
             lightboxImg.style.width = lightboxImg.clientWidth * scale + 'px';

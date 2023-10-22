@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <title>Create Habitat</title>
+    <title>Create Country</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Agency FB', sans-serif;
             background-color: #1a1a1a;
             color: #d8f0f3;
             margin: 0;
@@ -12,25 +13,30 @@
             flex-direction: column;
             min-height: 100vh;
             background-image: url('https://images3.alphacoders.com/129/1291921.jpg');
-            background-size: cover; /* ให้รูปครอบคลุมพื้นที่ */
-            background-position: center; /* จัดตำแหน่งรูปตรงกลาง */
-            background-repeat: no-repeat; /* ไม่ให้รูปซ้ำ */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
 
         h1 {
             text-align: center;
             color: #ffffff;
             -webkit-text-stroke: 2px black;
+            font-size: 36px;
         }
 
         form {
             max-width: 400px;
             margin: 0 auto;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 5px;
         }
 
         label {
             display: block;
             margin-top: 10px;
+            color: #fff;
         }
 
         input {
@@ -39,12 +45,20 @@
             margin-top: 5px;
             margin-bottom: 10px;
             box-sizing: border-box;
+            background-color: #333;
+            color: #fff;
+            border: 1px solid #444;
+            border-radius: 5px;
         }
 
         input[type="submit"] {
             background-color: #2196f3;
             color: #fff;
             cursor: pointer;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
         }
 
         input[type="submit"]:hover {
@@ -56,7 +70,7 @@
             text-align: center;
             margin-top: 20px;
             text-decoration: none;
-            color: #000000;
+            color: #fff;
         }
 
         a:hover {
@@ -64,21 +78,19 @@
         }
     </style>
 </head>
+
 <body>
-    <h1>Create Habitat</h1>
-    <form method="post" action="/createHabitat">
-        <label for="Name" style="color: #000000">Name</label>
+    <h1>Create Country</h1>
+    <form method="post" action="/createCountry">
+        <label for="Name">Name</label>
         <input type="text" id="Name" name="Name">
-        <br>
-        <label for="Data" style="color: #000000">Data</label>
+        <label for="Data">Data</label>
         <input type="text" id="Data" name="Data">
-        <br>
-        <label for="Pic" style="color: #000000">Pic</label>
+        <label for="Pic">Pic</label>
         <input type="text" id="Pic" name="Pic">
-        <br>
-        <input type="submit" value="Create">
-        <br>
+        <input type="submit" value="Create" style="font-family: 'Agency FB', sans-serif; background-color: #2196f3; color: #fff; cursor: pointer; border: none; padding: 10px 20px; border-radius: 5px; transition: background-color 0.3s ease;">
     </form>
-    <a href="/Habitats">Back to List</a>
+    <a href="/Countrys">Back to List</a>
 </body>
+
 </html>

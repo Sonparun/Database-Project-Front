@@ -15,67 +15,67 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(express.static(__dirname + '/public'));
 
-app.get('/Animals', async (req, res) => {
+app.get('/Movies', async (req, res) => {
     try{
-        const response = await axios.get(base_url + '/Animal');
-        res.render('Animals', { Animals: response.data });
+        const response = await axios.get(base_url + '/Movie');
+        res.render('Movies', { Movies: response.data });
     } catch (err) {
         console.log(err);
         res.status(500).send('err');
     }
 });
 
-app.get("/Animal/:ID", async (req, res) => {
+app.get("/Movie/:ID", async (req, res) => {
     try {
-        const response = await axios.get(base_url + '/Animal/' + req.params.ID);
-        res.render('Animal', { Animal: response.data });
+        const response = await axios.get(base_url + '/Movie/' + req.params.ID);
+        res.render('Movie', { Movie: response.data });
     } catch (err) {
         console.error(err);
         res.status(500).send('err');
     }
 });
 
-app.get("/createAnimal", (req, res) => {
-    res.render('createAnimal');
+app.get("/createMovie", (req, res) => {
+    res.render('createMovie');
 });
 
-app.post("/createAnimal", async (req, res) => {
+app.post("/createMovie", async (req, res) => {
     try {
         const data = { Name: req.body.Name, Data: req.body.Data, Pic: req.body.Pic };
-        await axios.post(base_url + '/Animal', data);
-        res.redirect("/Animals"); 
+        await axios.post(base_url + '/Movie', data);
+        res.redirect("/Movies"); 
     } catch (err) {
         console.error(err);
         res.status(500).send('err');
     }
 });
 
-app.get("/updateAnimal/:ID", async (req, res) => {
+app.get("/updateMovie/:ID", async (req, res) => {
     try {
         const response = await axios.get(
-            base_url + '/Animal/' + req.params.ID);
-            res.render('updateAnimal', { Animal: response.data });
+            base_url + '/Movie/' + req.params.ID);
+            res.render('updateMovie', { Movie: response.data });
     } catch (err) {
         console.error(err);
         res.status(500).send('err');
     }
 });
 
-app.post("/updateAnimal/:ID", async (req, res) => {
+app.post("/updateMovie/:ID", async (req, res) => {
     try {
         const data = { Name: req.body.Name, Data: req.body.Data, Pic: req.body.Pic };
-        await axios.put(base_url + '/Animal/' + req.params.ID, data);
-        res.redirect("/Animals");
+        await axios.put(base_url + '/Movie/' + req.params.ID, data);
+        res.redirect("/Movies");
     } catch (err) {
         console.error(err);
         res.status(500).send('err');
     }
 });
 
-app.get("/deleteAnimal/:ID", async (req, res) => {
+app.get("/deleteMovie/:ID", async (req, res) => {
     try {
-        await axios.delete(base_url + '/Animal/' + req.params.ID);
-            res.redirect("/Animals");
+        await axios.delete(base_url + '/Movie/' + req.params.ID);
+            res.redirect("/Movies");
     } catch (err) {
         console.error(err);
         res.status(500).send('err');
@@ -88,67 +88,67 @@ app.get("/deleteAnimal/:ID", async (req, res) => {
 
 
 
-app.get('/Habitats', async (req, res) => {
+app.get('/Countrys', async (req, res) => {
     try{
-        const response = await axios.get(base_url + '/Habitat');
-        res.render('Habitats', { Habitats: response.data });
+        const response = await axios.get(base_url + '/Country');
+        res.render('Countrys', { Countrys: response.data });
     } catch (err) {
         console.log(err);
         res.status(500).send('err');
     }
 });
 
-app.get("/Habitat/:ID", async (req, res) => {
+app.get("/Country/:ID", async (req, res) => {
     try {
-        const response = await axios.get(base_url + '/Habitat/' + req.params.ID);
-        res.render('Habitat', { Habitat: response.data });
+        const response = await axios.get(base_url + '/Country/' + req.params.ID);
+        res.render('Country', { Country: response.data });
     } catch (err) {
         console.error(err);
         res.status(500).send('err');
     }
 });
 
-app.get("/createHabitat", (req, res) => {
-    res.render('createHabitat');
+app.get("/createCountry", (req, res) => {
+    res.render('createCountry');
 });
 
-app.post("/createHabitat", async (req, res) => {
+app.post("/createCountry", async (req, res) => {
     try {
         const data = { Name: req.body.Name, Data: req.body.Data, Pic: req.body.Pic };
-        await axios.post(base_url + '/Habitat', data);
-        res.redirect("/Habitats"); 
+        await axios.post(base_url + '/Country', data);
+        res.redirect("/Countrys"); 
     } catch (err) {
         console.error(err);
         res.status(500).send('err');
     }
 });
 
-app.get("/updateHabitat/:ID", async (req, res) => {
+app.get("/updateCountry/:ID", async (req, res) => {
     try {
         const response = await axios.get(
-            base_url + '/Habitat/' + req.params.ID);
-            res.render('updateHabitat', { Habitat: response.data });
+            base_url + '/Country/' + req.params.ID);
+            res.render('updateCountry', { Country: response.data });
     } catch (err) {
         console.error(err);
         res.status(500).send('err');
     }
 });
 
-app.post("/updateHabitat/:ID", async (req, res) => {
+app.post("/updateCountry/:ID", async (req, res) => {
     try {
         const data = { Name: req.body.Name, Data: req.body.Data, Pic: req.body.Pic };
-        await axios.put(base_url + '/Habitat/' + req.params.ID, data);
-        res.redirect("/Habitats");
+        await axios.put(base_url + '/Country/' + req.params.ID, data);
+        res.redirect("/Countrys");
     } catch (err) {
         console.error(err);
         res.status(500).send('err');
     }
 });
 
-app.get("/deleteHabitat/:ID", async (req, res) => {
+app.get("/deleteCountry/:ID", async (req, res) => {
     try {
-        await axios.delete(base_url + '/Habitat/' + req.params.ID);
-            res.redirect("/Habitats");
+        await axios.delete(base_url + '/Country/' + req.params.ID);
+            res.redirect("/Countrys");
     } catch (err) {
         console.error(err);
         res.status(500).send('err');
@@ -165,13 +165,13 @@ app.get("/deleteHabitat/:ID", async (req, res) => {
 
 app.get('/', async (req, res) => {
     try{
-        const response1 = await axios.get(base_url + '/HabitatOfAnimal');
-        const response2 = await axios.get(base_url + '/Animal');
-        const response3 = await axios.get(base_url + '/Habitat');
-        res.render('HabitatOfAnimals', { 
-            HabitatOfAnimals: response1.data,
-            Animal: response2.data,
-            Habitat: response3.data
+        const response1 = await axios.get(base_url + '/MovieAndCountry');
+        const response2 = await axios.get(base_url + '/Movie');
+        const response3 = await axios.get(base_url + '/Country');
+        res.render('MovieAndCountrys', { 
+            MovieAndCountrys: response1.data,
+            Movie: response2.data,
+            Country: response3.data
         });
     } catch (err) {
         console.log(err);
@@ -179,24 +179,24 @@ app.get('/', async (req, res) => {
     }
 });
 
-app.get("/HabitatOfAnimal/:AnimalID", async (req, res) => {
+app.get("/MovieAndCountry/:MovieID", async (req, res) => {
     try {
-        const response = await axios.get(base_url + '/HabitatOfAnimal/' + req.params.AnimalID);
-        res.render('HabitatOfAnimal', { HabitatOfAnimal: response.data });
+        const response = await axios.get(base_url + '/MovieAndCountry/' + req.params.MovieID);
+        res.render('MovieAndCountry', { MovieAndCountry: response.data });
     } catch (err) {
         console.error(err);
         res.status(500).send('err');
     }
 });
 
-app.get("/createHabitatOfAnimal", (req, res) => {
-    res.render('createHabitatOfAnimal');
+app.get("/createMovieAndCountry", (req, res) => {
+    res.render('createMovieAndCountry');
 });
 
-app.post("/createHabitatOfAnimal", async (req, res) => {
+app.post("/createMovieAndCountry", async (req, res) => {
     try {
-        const data = { AnimalID: req.body.AnimalID, HabitatID: req.body.HabitatID };
-        await axios.post(base_url + '/HabitatOfAnimal', data);
+        const data = { MovieID: req.body.MovieID, CountryID: req.body.CountryID };
+        await axios.post(base_url + '/MovieAndCountry', data);
         res.redirect("/"); 
     } catch (err) {
         console.error(err);
@@ -204,21 +204,21 @@ app.post("/createHabitatOfAnimal", async (req, res) => {
     }
 });
 
-app.get("/updateHabitatOfAnimal/:AnimalID", async (req, res) => {
+app.get("/updateMovieAndCountry/:MovieID", async (req, res) => {
     try {
         const response = await axios.get(
-            base_url + '/HabitatOfAnimal/' + req.params.AnimalID);
-            res.render('updateHabitatOfAnimal', { HabitatOfAnimal: response.data });
+            base_url + '/MovieAndCountry/' + req.params.MovieID);
+            res.render('updateMovieAndCountry', { MovieAndCountry: response.data });
     } catch (err) {
         console.error(err);
         res.status(500).send('err');
     }
 });
 
-app.post("/updateHabitatOfAnimal/:AnimalID", async (req, res) => {
+app.post("/updateMovieAndCountry/:MovieID", async (req, res) => {
     try {
-        const data = { AnimalID: req.body.AnimalID, HabitatID: req.body.HabitatID };
-        await axios.put(base_url + '/HabitatOfAnimal/' + req.params.AnimalID, data);
+        const data = { MovieID: req.body.MovieID, CountryID: req.body.CountryID };
+        await axios.put(base_url + '/MovieAndCountry/' + req.params.MovieID, data);
         res.redirect("/");
     } catch (err) {
         console.error(err);
@@ -226,9 +226,9 @@ app.post("/updateHabitatOfAnimal/:AnimalID", async (req, res) => {
     }
 });
 
-app.get("/deleteHabitatOfAnimal/:AnimalID", async (req, res) => {
+app.get("/deleteMovieAndCountry/:MovieID", async (req, res) => {
     try {
-        await axios.delete(base_url + '/HabitatOfAnimal/' + req.params.AnimalID);
+        await axios.delete(base_url + '/MovieAndCountry/' + req.params.MovieID);
             res.redirect("/");
     } catch (err) {
         console.error(err);
@@ -243,6 +243,6 @@ app.get("/deleteHabitatOfAnimal/:AnimalID", async (req, res) => {
 
 
 
-app.listen(8080, () => {
+app.listen(8000, () => {
     console.log('Listening on port 8080');
 });

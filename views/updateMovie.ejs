@@ -1,32 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Create Animal</title>
+    <title>Update Movie</title>
     <style>
         body {
-            font-family: 'Roboto', sans-serif;
-            background: #222; 
+            font-family: 'Agency FB', sans-serif;
+            background: url('https://www.khaosod.co.th/wpapp/uploads/2017/12/siberian-cats-alla-lebedeva-2-696x558.jpg') no-repeat center center fixed;
+            background-size: cover;
             color: #fff;
             text-align: center;
-            margin: 50px;
-            background-size: cover;
+            display: flex;
             flex-direction: column;
+            align-items: center;
+            justify-content: center;
             min-height: 100vh;
-            background-image: url('https://media.tenor.com/g8wqAI8jmbcAAAAd/skipper-kowalski.gif');
-            background-size: cover; /* ให้รูปครอบคลุมพื้นที่ */
-            background-position: center; /* จัดตำแหน่งรูปตรงกลาง */
-            background-repeat: no-repeat; /* ไม่ให้รูปซ้ำ */
         }
 
         h1 {
             color: #f0f2f3;
+            font-size: 32px;
+            font-family: 'Agency FB', sans-serif;
         }
 
         form {
-            width: 50%;
-            margin: 0 auto;
-            background: rgba(40, 40, 40, 0.9);
+            width: 70%;
+            margin: 20px;
             padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
             border-radius: 15px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
         }
@@ -35,10 +35,11 @@
             display: block;
             margin: 10px 0;
             color: #eeeeee;
+            font-family: 'Agency FB', sans-serif;
         }
 
         input {
-            width: calc(100% - 20px);
+            width: 100%;
             padding: 15px;
             margin: 5px 0;
             box-sizing: border-box;
@@ -47,6 +48,7 @@
             background-color: #292929;
             color: #fff;
             font-size: 16px;
+            font-family: 'Agency FB', sans-serif;
         }
 
         input[type="submit"] {
@@ -65,25 +67,27 @@
             margin-top: 20px;
             text-decoration: none;
             color: #ffffff;
-            font-size: 34px;
+            font-size: 24px;
+            font-family: 'Agency FB', sans-serif;
         }
     </style>
 </head>
 <body>
-    <h1>Create Animal</h1>
-    <form method="post" action="/createAnimal">
+    <h1>Update Movie</h1>
+    <form method="post" action="/updateMovie/<%= Movie.ID %>">
         <label for="Name">Name</label>
-        <input type="text" id="Name" name="Name">
+        <input type="text" id="Name" name="Name" value="<%= Movie.Name %>">
         <br>
         <label for="Data">Data</label>
-        <input type="text" id="Data" name="Data">
+        <input type="text" id="Data" name="Data" value="<%= Movie.Data %>">
         <br>
         <label for="Pic">Pic</label>
-        <input type="text" id="Pic" name="Pic">
+        <input type="text" id="Pic" name="Pic" value="<%= Movie.Pic %>">
         <br>
-        <input type="submit" value="Create">
-        <br>
+        <input type="submit" value="Update">
     </form>
-    <a href="/Animals" style="color: #000000;">Back to List</a>
+    <a href="/Movie/<%= Movie.ID %>">View</a>
+    <a href="/DeleteMovie/<%= Movie.ID %>">Delete</a>
+    <a href="/Movies">Back to List</a>
 </body>
 </html>

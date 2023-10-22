@@ -1,26 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Animals</title>
+    <title>Countrys</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Agency FB', sans-serif;
             background-color: #1a1a1a;
             color: #fff;
             margin: 0;
             padding: 0;
             flex-direction: column;
             min-height: 100vh;
-            background-image: url('https://mono29.com/app/uploads/2016/07/madagascar-553c14ddd03eb.jpg');
-            background-size: cover; /* ให้รูปครอบคลุมพื้นที่ */
-            background-position: center; /* จัดตำแหน่งรูปตรงกลาง */
-            background-repeat: no-repeat; /* ไม่ให้รูปซ้ำ */
+            background-image: url('https://images.hdqwalls.com/download/jurassic-world-fallen-kingdom-key-art-e6-1920x1080.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
 
         h1 {
             text-align: center;
             color: #ffffff;
             -webkit-text-stroke: 2px black;
+            font-size: 36px;
+            padding: 20px;
+            font-family: 'Agency FB', sans-serif;
         }
 
         table {
@@ -35,7 +38,8 @@
             border: 1px solid #444;
             padding: 12px;
             text-align: left;
-            white-space: pre-wrap; 
+            white-space: pre-wrap;
+            color: #fff;
         }
 
         th {
@@ -45,7 +49,7 @@
         img {
             width: 300px;
             height: 180px;
-            object-fit: cover; 
+            object-fit: cover;
             border-radius: 5px;
         }
 
@@ -72,19 +76,19 @@
             margin-top: 10px;
             padding: 10px 15px;
             text-decoration: none;
-            background-color: #af4c4c;
+            background-color: #4caf50;
             color: #fff;
             border-radius: 5px;
             transition: background-color 0.3s ease;
         }
 
         .create-link:hover {
-            background-color: #723131;
+            background-color: #45a049;
         }
     </style>
 </head>
 <body>
-    <h1>Animals</h1>
+    <h1>Countrys</h1>
     <table>
         <tr>
             <th>ID</th>
@@ -93,24 +97,22 @@
             <th>Pic</th>
             <th>Actions</th>
         </tr>
-        <% for (var i = 0; i < Animals.length; i++) { %>
+        <% for (var i = 0; i < Countrys.length; i++) { %>
             <tr>
-                <td><%= Animals[i].ID %></td>
-                <td><%= Animals[i].Name %></td>
-                <td><%= Animals[i].Data %></td>
-                <td><img src="<%= Animals[i].Pic %>" alt="Animal Pic"></td>
+                <td><%= Countrys[i].ID %></td>
+                <td><%= Countrys[i].Name %></td>
+                <td><%= Countrys[i].Data %></td>
+                <td><img src="<%= Countrys[i].Pic %>" alt="Country Pic"></td>
                 <td class="actions">
-                    <a href="/Animal/<%= Animals[i].ID %>">View</a>
-                    <a href="/updateAnimal/<%= Animals[i].ID %>">Update</a>
-                    <a href="/deleteAnimal/<%= Animals[i].ID %>">Delete</a>
+                    <a href="/Country/<%= Countrys[i].ID %>">View</a>
+                    <a href="/updateCountry/<%= Countrys[i].ID %>">Update</a>
+                    <a href="/deleteCountry/<%= Countrys[i].ID %>">Delete</a>
                 </td>
             </tr>
         <% } %>
     </table>
-    <a href="/createAnimal" class="create-link">Create New Animal</a>
-    <br>
-    <a href="/" class="create-link">Add Habitat Of animal</a>
-    <br>
-    <a href="/Habitats" class="create-link">Add Habitat</a>
+    <a href="/createCountry" class="create-link">Create New Country</a>
+    <a href="/" class="create-link">Add Country Of Movie</a>
+    <a href="/Movies" class="create-link">Add Movie</a>
 </body>
 </html>
