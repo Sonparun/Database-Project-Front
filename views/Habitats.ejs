@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Habitats</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2196f3;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: #333;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            border: 1px solid #444;
+            padding: 12px;
+            text-align: left;
+            white-space: pre-wrap; 
+        }
+
+        th {
+            background-color: #222;
+        }
+
+        img {
+            width: 300px;
+            height: 180px;
+            object-fit: cover; 
+            border-radius: 5px;
+        }
+
+        .actions {
+            display: flex;
+            gap: 5px;
+        }
+
+        .actions a {
+            text-decoration: none;
+            padding: 8px 12px;
+            background-color: #2196f3;
+            color: #fff;
+            border-radius: 3px;
+            transition: background-color 0.3s ease;
+        }
+
+        .actions a:hover {
+            background-color: #1769aa;
+        }
+
+        .create-link {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 15px;
+            text-decoration: none;
+            background-color: #4caf50;
+            color: #fff;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .create-link:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Habitats</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Data</th>
+            <th>Pic</th>
+            <th>Actions</th>
+        </tr>
+        <% for (var i = 0; i < Habitats.length; i++) { %>
+            <tr>
+                <td><%= Habitats[i].ID %></td>
+                <td><%= Habitats[i].Name %></td>
+                <td><%= Habitats[i].Data %></td>
+                <td><img src="<%= Habitats[i].Pic %>" alt="Habitat Pic"></td>
+                <td class="actions">
+                    <a href="/Habitat/<%= Habitats[i].ID %>">View</a>
+                    <a href="/updateHabitat/<%= Habitats[i].ID %>">Update</a>
+                    <a href="/deleteHabitat/<%= Habitats[i].ID %>">Delete</a>
+                </td>
+            </tr>
+        <% } %>
+    </table>
+    <a href="/createHabitat"class="create-link">Create New Habitat</a>
+    <br>
+    <a href="/" class="create-link">Add Habitat Of animal</a>
+    <br>
+    <a href="/Animals" class="create-link">Add Animal</a>
+</body>
+</html>
