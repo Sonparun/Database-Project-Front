@@ -13,7 +13,7 @@
         display: flex;
         flex-direction: column;
         min-height: 100vh;
-        background-image: url('https://images.unsplash.com/photo-1571215682685-cdf3d3c592ed?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80');
+        background-image: url('https://www.metrowestdailynews.com/gcdn/authoring/2008/11/06/NMWD/ghows-WL-b6212cb0-f278-430c-8020-7f711d7fe407-1f2e1bc7.jpeg?width=1320&height=744&fit=crop&format=pjpg&auto=webp');
         background-size: cover; /* ให้รูปครอบคลุมพื้นที่ */
         background-position: center; /* จัดตำแหน่งรูปตรงกลาง */
         background-repeat: no-repeat; /* ไม่ให้รูปซ้ำ */
@@ -21,7 +21,8 @@
 
         h1 {
             text-align: center;
-            color: #007BFF;
+            color: #ffffff;
+            -webkit-text-stroke: 2px black;
         }
 
         table {
@@ -37,11 +38,11 @@
         border: 1px solid #ddd;
         padding: 12px;
         text-align: left;
-        background-color: rgba(255, 255, 255, 0.9); /* สีพื้นหลัง cell */
+        background-color: rgba(255, 255, 255, 0.507); /* สีพื้นหลัง cell */
     }
 
         th {
-            background-color: #f2f2f2;
+            background-color: #f2f2f270;
         }
 
         a {
@@ -89,8 +90,9 @@
         </tr>
         <% for (var i = 0; i < HabitatOfAnimals.length; i++) { %>
             <tr>
-                <td><%= HabitatOfAnimals[i].AnimalID %></td>
-                <td><%= HabitatOfAnimals[i].HabitatID %></td>
+                <td><%= Animal[i].Name %></td>
+                <td><%= Habitat[i].Name %></td>
+                <!-- ข้อมูลอื่น ๆ -->
                 <td class="actions">
                     <a href="/HabitatOfAnimal/<%= HabitatOfAnimals[i].AnimalID %>">View</a>
                     <a href="/updateHabitatOfAnimal/<%= HabitatOfAnimals[i].AnimalID %>">Update</a>
@@ -103,9 +105,5 @@
     <a href="/Animals" class="create-link">Add Animal</a>
     <a href="/Habitats" class="create-link">Add Habitat</a>
     <br>
-
-    <div class="footer">
-        &copy; 2023 Welcome to BigKuma World
-    </div>
 </body>
 </html>

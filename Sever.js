@@ -5,7 +5,7 @@ var bodyParser = require('body-parser');
 
 
 
-const base_url = 'http://localhost:3000/';
+const base_url = 'http://localhost:3000';
 
 
 app.set('view engine', 'ejs');
@@ -165,8 +165,14 @@ app.get("/deleteHabitat/:ID", async (req, res) => {
 
 app.get('/', async (req, res) => {
     try{
-        const response = await axios.get(base_url + '/HabitatOfAnimal');
-        res.render('HabitatOfAnimals', { HabitatOfAnimals: response.data });
+        const response1 = await axios.get(base_url + '/HabitatOfAnimal');
+        const response2 = await axios.get(base_url + '/Animal');
+        const response3 = await axios.get(base_url + '/Habitat');
+        res.render('HabitatOfAnimals', { 
+            HabitatOfAnimals: response1.data,
+            Animal: response2.data,
+            Habitat: response3.data
+        });
     } catch (err) {
         console.log(err);
         res.status(500).send('err');
