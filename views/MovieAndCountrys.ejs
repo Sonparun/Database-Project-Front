@@ -69,7 +69,7 @@
             display: block;
             margin: 10px auto;
             text-align: center;
-            background-color: #007BFF;
+            background-color: #ff0000;
             color: #fff;
             padding: 8px 15px;
             border-radius: 8px;
@@ -77,15 +77,7 @@
         }
 
         .create-link:hover {
-            background-color: #0056b3;
-        }
-
-        .footer {
-            background-color: #002955;
-            color: #fff;
-            padding: 10px;
-            text-align: center;
-            width: 100%;
+            background-color: #3b0000;
         }
     </style>
 </head>
@@ -102,13 +94,13 @@
         </tr>
         <% for (var i = 0; i < MovieAndCountrys.length; i++) { %>
             <tr>
-                <td><%= Movie[i].Name %></td>
-                <td><%= Country[i].Name %></td>
+                <td><%= MovieAndCountrys[i].MovieID ? Movie[MovieAndCountrys[i].MovieID].Name : '' %></td>
+                <td><%= MovieAndCountrys[i].CountryID ? Country[MovieAndCountrys[i].CountryID].Name : '' %></td>
                                 <!-- ข้อมูลอื่น ๆ -->
                 <td class="actions">
-                    <a href="/MovieAndCountry/<%= MovieAndCountrys[i].MovieID %>">View</a>
-                    <a href="/updateMovieAndCountry/<%= MovieAndCountrys[i].MovieID %>">Update</a>
-                    <a href="/deleteMovieAndCountry/<%= MovieAndCountrys[i].MovieID %>">Delete</a>
+                    <a href="/MovieAndCountry/<%= MovieAndCountrys[i].ID %>">View</a>
+                    <a href="/updateMovieAndCountry/<%= MovieAndCountrys[i].ID %>">Update</a>
+                    <a href="/deleteMovieAndCountry/<%= MovieAndCountrys[i].ID %>">Delete</a>
                 </td>
             </tr>
         <% } %>

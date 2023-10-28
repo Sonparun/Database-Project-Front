@@ -179,9 +179,9 @@ app.get('/', async (req, res) => {
     }
 });
 
-app.get("/MovieAndCountry/:MovieID", async (req, res) => {
-    try {
-        const response = await axios.get(base_url + '/MovieAndCountry/' + req.params.MovieID);
+app.get("/MovieAndCountry/:ID", async (req, res) => {
+    try {   
+        const response = await axios.get(base_url + '/MovieAndCountry/' + req.params.ID);
         res.render('MovieAndCountry', { MovieAndCountry: response.data });
     } catch (err) {
         console.error(err);
@@ -204,10 +204,10 @@ app.post("/createMovieAndCountry", async (req, res) => {
     }
 });
 
-app.get("/updateMovieAndCountry/:MovieID", async (req, res) => {
+app.get("/updateMovieAndCountry/:ID", async (req, res) => {
     try {
         const response = await axios.get(
-            base_url + '/MovieAndCountry/' + req.params.MovieID);
+            base_url + '/MovieAndCountry/' + req.params.ID);
             res.render('updateMovieAndCountry', { MovieAndCountry: response.data });
     } catch (err) {
         console.error(err);
@@ -215,10 +215,10 @@ app.get("/updateMovieAndCountry/:MovieID", async (req, res) => {
     }
 });
 
-app.post("/updateMovieAndCountry/:MovieID", async (req, res) => {
+app.post("/updateMovieAndCountry/:ID", async (req, res) => {
     try {
         const data = { MovieID: req.body.MovieID, CountryID: req.body.CountryID };
-        await axios.put(base_url + '/MovieAndCountry/' + req.params.MovieID, data);
+        await axios.put(base_url + '/MovieAndCountry/' + req.params.ID, data);
         res.redirect("/");
     } catch (err) {
         console.error(err);
@@ -226,9 +226,9 @@ app.post("/updateMovieAndCountry/:MovieID", async (req, res) => {
     }
 });
 
-app.get("/deleteMovieAndCountry/:MovieID", async (req, res) => {
+app.get("/deleteMovieAndCountry/:ID", async (req, res) => {
     try {
-        await axios.delete(base_url + '/MovieAndCountry/' + req.params.MovieID);
+        await axios.delete(base_url + '/MovieAndCountry/' + req.params.ID);
             res.redirect("/");
     } catch (err) {
         console.error(err);

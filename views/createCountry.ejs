@@ -5,14 +5,14 @@
     <title>Create Country</title>
     <style>
         body {
-            font-family: 'Agency FB', sans-serif;
+            font-family: "Agency FB", Arial, sans-serif;
             background-color: #1a1a1a;
             color: #d8f0f3;
             margin: 0;
             padding: 20px;
             flex-direction: column;
             min-height: 100vh;
-            background-image: url('https://images3.alphacoders.com/129/1291921.jpg');
+            background-color: #000000;
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -21,8 +21,7 @@
         h1 {
             text-align: center;
             color: #ffffff;
-            -webkit-text-stroke: 2px black;
-            font-size: 36px;
+            font-family: "Agency FB", Arial, sans-serif;
         }
 
         form {
@@ -37,6 +36,7 @@
             display: block;
             margin-top: 10px;
             color: #fff;
+            font-family: "Agency FB", Arial, sans-serif;
         }
 
         input {
@@ -45,6 +45,9 @@
             margin-top: 5px;
             margin-bottom: 10px;
             box-sizing: border-box;
+        }
+
+        input[type="text"] {
             background-color: #333;
             color: #fff;
             border: 1px solid #444;
@@ -52,7 +55,7 @@
         }
 
         input[type="submit"] {
-            background-color: #2196f3;
+            background-color: #ff0000;
             color: #fff;
             cursor: pointer;
             border: none;
@@ -62,7 +65,7 @@
         }
 
         input[type="submit"]:hover {
-            background-color: #1769aa;
+            background-color: #3b0000;
         }
 
         a {
@@ -71,16 +74,21 @@
             margin-top: 20px;
             text-decoration: none;
             color: #fff;
+            font-family: "Agency FB", Arial, sans-serif;
         }
 
         a:hover {
-            color: #1769aa;
+            color: #ffd900;
         }
+    </style>
     </style>
 </head>
 
 <body>
-    <h1>Create Country</h1>
+    <div style="display: flex; align-items: center; text-align: center; justify-content: center; height:20vh;">
+        <img src="https://www.24-hd.com/wp-content/uploads/2022/08/logo24.png" style="margin-right: 10px;">
+        <h1>Create Country</h1>
+    </div>
     <form method="post" action="/createCountry">
         <label for="Name">Name</label>
         <input type="text" id="Name" name="Name">

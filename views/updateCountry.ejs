@@ -5,30 +5,28 @@
     <style>
         body {
             font-family: 'Agency FB', sans-serif;
-            background: url('https://cdn.wallpapersafari.com/9/99/g7mtvV.jpg');
+            background: #000000; 
+            color: #fff;
+            text-align: center;
+            margin: 50px;
+            background-size: cover;
+            flex-direction: column;
+            min-height: 100vh;
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            color: #fff;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
         }
 
         h1 {
             color: #f0f2f3;
-            font-size: 32px;
             font-family: 'Agency FB', sans-serif;
         }
 
         form {
-            width: 70%;
-            margin: 20px;
+            width: 50%;
+            margin: 0 auto;
+            background: rgba(40, 40, 40, 0.9);
             padding: 20px;
-            background: rgba(0, 0, 0, 0.7);
             border-radius: 15px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
         }
@@ -41,11 +39,11 @@
         }
 
         input {
-            width: 100%;
+            width: calc(100% - 20px);
             padding: 15px;
             margin: 5px 0;
             box-sizing: border-box;
-            border: 2px solid #2196f3;
+            border: 2px solid #ffd900;
             border-radius: 10px;
             background-color: #292929;
             color: #fff;
@@ -54,14 +52,15 @@
         }
 
         input[type="submit"] {
-            background-color: #2196f3;
+            background-color: #ff0000;
             color: white;
             cursor: pointer;
             transition: background-color 0.3s ease;
+            border: none;
         }
 
         input[type="submit"]:hover {
-            background-color: #1769aa;
+            background-color: #3b0000;
         }
 
         a {
