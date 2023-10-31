@@ -244,5 +244,5 @@ app.get("/deleteMovieAndCountry/:ID", async (req, res) => {
 
 
 app.listen(8000, () => {
-    console.log('Listening on port 8080');
+    console.log('Listening on port 8000');
 });
