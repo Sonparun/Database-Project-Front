@@ -5,7 +5,7 @@ var bodyParser = require('body-parser');
 
 
 
-const base_url = 'https://node50178-sonparun-js.proen.app.ruk-com.cloud';
+const base_url = 'http://node50178-sonparun-js.proen.app.ruk-com.cloud';
 
 
 app.set('view engine', 'ejs');
