@@ -4,7 +4,6 @@ const app = express();
 var bodyParser = require('body-parser');
 
 
-
 const base_url = 'http://node50178-sonparun-js.proen.app.ruk-com.cloud';
 
 
