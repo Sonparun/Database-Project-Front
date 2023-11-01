@@ -40,7 +40,7 @@ app.get("/createMovie", (req, res) => {
 
 app.post("/createMovie", async (req, res) => {
     try {
-        const data = { Name: req.body.Name, Data: req.body.Data, Pic: req.body.Pic };
+        const data = { Name: req.body.Name, Data: req.body.Data };
         await axios.post(base_url + '/Movie', data);
         res.redirect("/Movies"); 
     } catch (err) {
@@ -62,7 +62,7 @@ app.get("/updateMovie/:ID", async (req, res) => {
 
 app.post("/updateMovie/:ID", async (req, res) => {
     try {
-        const data = { Name: req.body.Name, Data: req.body.Data, Pic: req.body.Pic };
+        const data = { Name: req.body.Name, Data: req.body.Data};
         await axios.put(base_url + '/Movie/' + req.params.ID, data);
         res.redirect("/Movies");
     } catch (err) {
@@ -113,7 +113,7 @@ app.get("/createCountry", (req, res) => {
 
 app.post("/createCountry", async (req, res) => {
     try {
-        const data = { Name: req.body.Name, Data: req.body.Data, Pic: req.body.Pic };
+        const data = { Name: req.body.Name, Data: req.body.Data };
         await axios.post(base_url + '/Country', data);
         res.redirect("/Countrys"); 
     } catch (err) {
@@ -135,7 +135,7 @@ app.get("/updateCountry/:ID", async (req, res) => {
 
 app.post("/updateCountry/:ID", async (req, res) => {
     try {
-        const data = { Name: req.body.Name, Data: req.body.Data, Pic: req.body.Pic };
+        const data = { Name: req.body.Name, Data: req.body.Data };
         await axios.put(base_url + '/Country/' + req.params.ID, data);
         res.redirect("/Countrys");
     } catch (err) {
