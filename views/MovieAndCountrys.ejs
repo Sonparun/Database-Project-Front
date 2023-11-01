@@ -93,7 +93,7 @@
             <th>Actions</th>
         </tr>
         <% for (var i = 0; i < MovieAndCountrys.length; i++) { %>
-            <tr>td><%= MovieAndCountrys[i].MovieID && Movie[MovieAndCountrys[i].MovieID] ? Movie[MovieAndCountrys[i].MovieID].Name : 'undefined ID' %></td>
+            <td><%= MovieAndCountrys[i].MovieID && Movie[MovieAndCountrys[i].MovieID] ? Movie[MovieAndCountrys[i].MovieID].Name : 'undefined ID' %></td>
                 <td><%= MovieAndCountrys[i].CountryID && Country[MovieAndCountrys[i].CountryID] ? Country[MovieAndCountrys[i].CountryID].Name : 'undefined ID' %></td>
                                 <!-- ข้อมูลอื่น ๆ -->
                 <td class="actions">
