@@ -194,7 +194,7 @@ app.get("/createMovieAndCountry", (req, res) => {
 
 app.post("/createMovieAndCountry", async (req, res) => {
     try {
-        const data = { MovieID: req.body.MovieID, CountryID: req.body.CountryID };
+        const data = { MovieID: req.body.MovieID - 1, CountryID: req.body.CountryID - 1 };
         await axios.post(base_url + '/MovieAndCountry', data);
         res.redirect("/"); 
     } catch (err) {
@@ -216,7 +216,7 @@ app.get("/updateMovieAndCountry/:ID", async (req, res) => {
 
 app.post("/updateMovieAndCountry/:ID", async (req, res) => {
     try {
-        const data = { MovieID: req.body.MovieID, CountryID: req.body.CountryID };
+        const data = { MovieID: req.body.MovieID -1 , CountryID: req.body.CountryID - 1 };
         await axios.put(base_url + '/MovieAndCountry/' + req.params.ID, data);
         res.redirect("/");
     } catch (err) {
